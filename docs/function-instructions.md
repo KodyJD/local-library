@@ -404,6 +404,7 @@ getMostPopularAuthors(books, authors);
   ]
 */
 ```
+
 ### Create a helper function
 
 A helper function is a function that executes part of the logic of another function. Helper functions make your programs easier to understand by letting you give descriptive names to computations and reuse them. For this exercise, create at least one helper method for any of the functions that you implemented for this assignment.

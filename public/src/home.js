@@ -38,12 +38,16 @@ function getMostPopularBooks(books) {
     .sort((bookA, bookB) => bookB.count - bookA.count)
     .splice(0, 5);
 }
+// helper function for getMostPopularAuthors
+function findNewAuthor(books, authors) {
+  return books.filter((book) =>
+    authors.find((author) => author.id === book.authorId)
+  );
+}
 
 function getMostPopularAuthors(books, authors) {
   let authorsResult = [];
-  let popularAuthor = books.filter((book) =>
-    authors.find((author) => author.id === book.authorId)
-  );
+  let popularAuthor = findNewAuthor(books, authors);
   popularAuthor.forEach((book) => {
     let author = authors.find((author) => author.id === book.authorId);
     authorsResult.push({
@@ -65,3 +69,5 @@ module.exports = {
   getMostPopularBooks,
   getMostPopularAuthors,
 };
+
+

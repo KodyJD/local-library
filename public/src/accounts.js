@@ -4,8 +4,9 @@ function findAccountById(accounts, id) {
 }
 
 function sortAccountsByLastName(accounts) {
-  accounts.sort((accountA, accountB) => accountA.name.last.toLowerCase() > accountB.name.last.toLowerCase() ? 1 : -1);
-  return accounts;
+  return accounts.sort((accountA, accountB) =>
+    accountA.name.last.toLowerCase() > accountB.name.last.toLowerCase() ? 1 : -1
+  );
 }
 
 function getTotalNumberOfBorrows(account, books) {
@@ -19,8 +20,6 @@ function getTotalNumberOfBorrows(account, books) {
   return total;
 }
 
-
-
 function getBooksPossessedByAccount(account, books, authors) {
   const accountInfo = account.id;
   let booksPossessed = books.filter(
@@ -33,3 +32,10 @@ function getBooksPossessedByAccount(account, books, authors) {
   }));
   return bookDetails;
 }
+
+module.exports = {
+  findAccountById,
+  sortAccountsByLastName,
+  getTotalNumberOfBorrows,
+  getBooksPossessedByAccount,
+};
